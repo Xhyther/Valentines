@@ -79,17 +79,28 @@
         justify-content: center;
         align-items: center;
         z-index: 10;
+        padding: 20px;
+        box-sizing: border-box;
     }
 
     .content-box {
         background: rgba(255, 255, 255, 0.95);
         backdrop-filter: blur(10px);
-        padding: 60px 80px;
+        padding: 40px 30px;
         border-radius: 30px;
         box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
         border: 3px solid rgba(255, 255, 255, 0.8);
         animation: fadeInScale 1s ease-out;
         max-width: 90%;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    @media (min-width: 768px) {
+        .content-box {
+            padding: 60px 80px;
+            max-width: 600px;
+        }
     }
 
     @keyframes fadeInScale {
@@ -105,14 +116,21 @@
 
     h1 {
         color: #d6336c;
-        font-size: 3rem;
+        font-size: 1.8rem;
         text-shadow: 2px 2px 4px rgba(214, 51, 108, 0.2);
-        margin-bottom: 40px;
+        margin-bottom: 30px;
         text-align: center;
         pointer-events: none;
         font-weight: normal;
         letter-spacing: 1px;
         animation: pulse 2s ease-in-out infinite;
+    }
+
+    @media (min-width: 768px) {
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 40px;
+        }
     }
 
     @keyframes pulse {
@@ -122,12 +140,19 @@
 
     .subtitle {
         color: #8b4789;
-        font-size: 1.2rem;
+        font-size: 1rem;
         text-align: center;
-        margin-bottom: 30px;
+        margin-bottom: 25px;
         font-style: italic;
         opacity: 0;
         animation: fadeIn 1s ease-out 0.5s forwards;
+    }
+
+    @media (min-width: 768px) {
+        .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
     }
 
     @keyframes fadeIn {
@@ -137,14 +162,25 @@
     .buttons {
         pointer-events: auto;
         display: flex;
-        gap: 30px;
+        gap: 15px;
         opacity: 0;
         animation: fadeIn 1s ease-out 1s forwards;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    @media (min-width: 768px) {
+        .buttons {
+            gap: 30px;
+            flex-wrap: nowrap;
+        }
     }
 
     button {
-        padding: 20px 60px;
-        font-size: 1.5rem;
+        padding: 15px 30px;
+        font-size: 1.1rem;
         border: none;
         border-radius: 60px;
         cursor: pointer;
@@ -154,6 +190,16 @@
         font-family: 'Georgia', serif;
         position: relative;
         overflow: hidden;
+        min-width: 120px;
+        white-space: nowrap;
+    }
+
+    @media (min-width: 768px) {
+        button {
+            padding: 20px 60px;
+            font-size: 1.5rem;
+            min-width: auto;
+        }
     }
 
     button::before {
@@ -244,10 +290,18 @@
     }
 
     .success-message {
-        font-size: 2.5rem;
+        font-size: 1.5rem;
         color: #d6336c;
         text-align: center;
         animation: successBounce 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        padding: 0 20px;
+    }
+
+    @media (min-width: 768px) {
+        .success-message {
+            font-size: 2.5rem;
+            padding: 0;
+        }
     }
 
     @keyframes successBounce {
